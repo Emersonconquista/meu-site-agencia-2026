@@ -56,3 +56,46 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main); li
 /* Footer */
 .footer { padding: 100px 0 50px; background: var(--dark); color: #fff; text-align: center; }
 .footer h2 { font-size: 3rem; margin-bottom: 20px; }
+
+/* Estilo para o efeito Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ANIMAÇÕES DE REVEAL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px); /* Começa 30px abaixo */
+    transition: all 0.8s ease-out; /* Transição suave de quase 1 segundo */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0); /* Volta para a posição original */
+}
+/* --- AJUSTE DO RODAPÉ --- */
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Coloca um item embaixo do outro */
+    align-items: center;    /* Alinha tudo ao centro */
+    padding: 100px 20px;   /* Aumenta o respiro da seção */
+    gap: 30px;              /* Cria espaço automático entre h2, p e botão */
+}
+
+.cta-container {
+    margin: 20px 0;         /* Garante um espaço extra em volta do botão */
+    display: block;         /* Garante que ele ocupe sua própria linha */
+    width: 100%;
+}
+
+.footer-bottom {
+    margin-top: 50px;       /* Empurra o copyright para baixo */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
