@@ -154,3 +154,25 @@ p {
     font-weight: 800;
     opacity: 0.9; /* Melhora a visibilidade do número */
 }
+
+/* CONQUISTA STUDIO - AJUSTE PARA ACESSIBILIDADE 100 */
+p {
+    color: #f1f5f9 !important; /* Branco azulado de alto contraste */
+    line-height: 1.8;
+}
+
+.hero p {
+    color: #cbd5e1 !important; /* Cinza claro para o subtítulo hero */
+}
+
+/* Garante que os botões tenham bordas visíveis para navegação por teclado */
+.btn-primary:focus, .btn-outline:focus, .btn-nav:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Melhora a visibilidade dos cards no fundo escuro */
+.service-card, .step-item {
+    background: #111827; 
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
