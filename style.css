@@ -1,101 +1,144 @@
-:root {
-    --primary: #0055ff;
-    --dark: #0a0f1a;
-    --text-main: #1e293b;
-    --text-gray: #64748b;
-    --bg-light: #f8fafc;
-}
-
+/* --- RESET E BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-main); line-height: 1.6; }
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: #0a0c10; 
+    color: #ffffff; 
+    overflow-x: hidden;
+}
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: inherit; }
 
-/* Navbar */
-.navbar { padding: 20px 0; border-bottom: 1px solid #eef2f6; position: sticky; top: 0; background: #fff; z-index: 1000; }
+/* --- NAVBAR --- */
+.navbar { padding: 20px 0; background: #0a0c10; border-bottom: 1px solid #1a1d23; }
 .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); }
-.logo span { color: var(--primary); }
+.logo { font-weight: 800; font-size: 1.5rem; color: #ffffff; }
+.logo span { color: #3b82f6; }
 .nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
-.nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; }
-.btn-nav { background: var(--dark); color: #fff !important; padding: 10px 20px; border-radius: 8px; }
+.btn-nav { background: #1a1d23; padding: 10px 20px; border-radius: 5px; font-weight: 600; border: 1px solid #3b82f6; }
 
-/* Hero */
-.hero { padding: 120px 0; text-align: center; background: radial-gradient(circle at top, #f1f5ff 0%, #fff 100%); }
-.badge { background: #e0eaff; color: var(--primary); padding: 8px 16px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; }
-.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; color: var(--dark); margin: 25px 0; line-height: 1.1; }
-.hero h1 span { color: var(--primary); }
-.hero p { max-width: 800px; margin: 0 auto 40px; font-size: 1.25rem; color: var(--text-gray); }
+/* --- HERO --- */
+.hero { padding: 100px 0; text-align: center; }
+.badge { background: #1a1d23; color: #3b82f6; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+h1 { font-size: 3.5rem; margin: 20px 0; line-height: 1.2; }
+h1 span { color: #3b82f6; }
+.hero p { color: #94a3b8 !important; max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; }
 .hero-actions { display: flex; justify-content: center; gap: 20px; }
+.btn-primary { background: #3b82f6; color: white; padding: 15px 30px; border-radius: 8px; font-weight: 700; }
+.btn-outline { border: 1px solid #ffffff; padding: 15px 30px; border-radius: 8px; font-weight: 700; }
 
-.btn-primary { background: var(--primary); color: #fff; border: none; padding: 18px 35px; border-radius: 10px; font-weight: 700; cursor: pointer; text-decoration: none; transition: 0.3s; }
-.btn-outline { border: 2px solid var(--dark); color: var(--dark); padding: 18px 35px; border-radius: 10px; font-weight: 700; text-decoration: none; }
+/* --- LOGOS E GRIDS --- */
+.logos-bar { padding: 50px 0; text-align: center; opacity: 0.6; }
+.logos-grid { display: flex; justify-content: space-around; margin-top: 20px; flex-wrap: wrap; gap: 20px; }
 
-/* Logos Bar */
-.logos-bar { padding: 50px 0; border-bottom: 1px solid #f1f5f9; text-align: center; }
-.logos-grid { display: flex; justify-content: space-between; margin-top: 30px; opacity: 0.5; font-weight: 800; }
-
-/* Services & Steps */
-.services, .steps, .faq { padding: 100px 0; }
-.section-header, .title-center { text-align: center; margin-bottom: 60px; font-size: 2.5rem; color: var(--dark); }
-.services-grid, .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.service-card, .step-item { padding: 40px; border: 1px solid #f1f5f9; border-radius: 20px; transition: 0.3s; }
-.service-card:hover { border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-
-/* Split Section */
-.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; padding: 100px 0; }
-.experience-card { background: var(--dark); color: var(--primary); padding: 60px; border-radius: 30px; text-align: center; }
-.exp-number { font-size: 5rem; font-weight: 900; }
-
-/* FAQ */
-.faq-item { border-bottom: 1px solid #f1f5f9; }
-.faq-trigger { width: 100%; text-align: left; padding: 25px 0; background: none; border: none; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
-.faq-content { max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-gray); }
-.faq-item.active .faq-content { max-height: 100px; padding-bottom: 25px; }
-
-/* Footer */
-.footer { padding: 100px 0 50px; background: var(--dark); color: #fff; text-align: center; }
-.footer h2 { font-size: 3rem; margin-bottom: 20px; }
-
-/* Estilo para o efeito Reveal */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+/* --- SERVICES & STEPS (CARDS) --- */
+.services, .steps { padding: 100px 0; }
+.section-header, .title-center { text-align: center; margin-bottom: 50px; }
+.services-grid, .steps-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
 }
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.service-card, .step-item { 
+    background: #11141b; 
+    padding: 40px; 
+    border-radius: 15px; 
+    border: 1px solid #1a1d23;
+}
+.service-card p, .step-item p { color: #94a3b8 !important; margin-top: 15px; }
+
+/* --- FOOTER (Ajustado para não embolar) --- */
+.footer { background: #07090e; padding: 80px 0 30px; text-align: center; }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.cta-container { margin: 20px 0; }
+.footer-bottom { margin-top: 50px; padding-top: 20px; border-top: 1px solid #1a1d23; color: #64748b; font-size: 0.9rem; }
+
+/* --- ANIMAÇÕES (REVEAL) --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- SEÇÃO DIFERENCIAIS --- */
+.split-section {
+    padding: 100px 0;
+    background: #0a0c10;
 }
 
-/* --- ANIMAÇÕES DE REVEAL --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px); /* Começa 30px abaixo */
-    transition: all 0.8s ease-out; /* Transição suave de quase 1 segundo */
+.split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
+    gap: 80px;
+    align-items: center;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0); /* Volta para a posição original */
+/* Card Azul com a Nota 99 */
+.experience-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 60px;
+    border-radius: 24px;
+    border: 1px solid #3b82f6;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
-/* --- AJUSTE DO RODAPÉ --- */
-.footer-content {
+
+.exp-number {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #3b82f6;
+    display: block;
+    line-height: 1;
+}
+
+.experience-card p {
+    color: #ffffff !important;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Conteúdo do Texto */
+.label {
+    color: #3b82f6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.split-content h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.split-content p {
+    font-size: 1.15rem;
+    color: #94a3b8 !important;
+    margin-bottom: 30px;
+}
+
+/* Lista com Checkmarks */
+.check-list {
+    list-style: none;
+    padding: 0;
+}
+
+.check-list li {
     display: flex;
-    flex-direction: column; /* Coloca um item embaixo do outro */
-    align-items: center;    /* Alinha tudo ao centro */
-    padding: 100px 20px;   /* Aumenta o respiro da seção */
-    gap: 30px;              /* Cria espaço automático entre h2, p e botão */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #e2e8f0;
 }
 
-.cta-container {
-    margin: 20px 0;         /* Garante um espaço extra em volta do botão */
-    display: block;         /* Garante que ele ocupe sua própria linha */
-    width: 100%;
+.check-list li span {
+    color: #3b82f6;
+    font-size: 1.2rem;
 }
 
-.footer-bottom {
-    margin-top: 50px;       /* Empurra o copyright para baixo */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
+/* Responsivo para Celular */
+@media (max-width: 768px) {
+    .split-grid { grid-template-columns: 1fr; gap: 40px; }
+    .split-content h2 { font-size: 2rem; }
 }
